@@ -1,69 +1,36 @@
+# ImageFinder
 
-# Eulerity Hackathon Challenge
+## Overview
+ImageFinder is a Java-based web crawler designed for the Eulerity Hackathon Challenge. The application crawls a user-provided URL to extract all image URLs from the webpage and its sub-pages within the same domain. The project utilizes multi-threading for efficient crawling and ensures that previously visited pages are not re-crawled. It also offers additional functionality, such as the ability to detect potential logos and a front-end for user interaction.
 
-## ImageFinder Goal
-The goal of this task is to perform a web crawl on a URL string provided by the user. From the crawl, you will need to parse out all of the images on that web page and return a JSON array of strings that represent the URLs of all images on the page. [Jsoup](https://jsoup.org/) is a great basic library for crawling and is already included as a maven dependency in this project, however you are welcome to use whatever library you would like.
-
-### Required Functionality
-We expect your submission to be able to achieve the following goals:
-- Build a web crawler that can find all images on the web page(s) that it crawls.
-- Crawl sub-pages to find more images.
-- Implement multi-threading so that the crawl can be performed on multiple sub-pages at a time.
-- Keep your crawl within the same domain as the input URL.
-- Avoid re-crawling any pages that have already been visited.
+## Features
+### Core Functionality
+- **Web Crawling**: Extracts image URLs from a webpage using libraries such as `Jsoup`.
+- **Sub-page Crawling**: Crawls sub-pages of the given domain to gather additional images.
+- **Multi-threading**: Implements multi-threading to crawl multiple sub-pages simultaneously for enhanced performance.
+- **Domain Restriction**: Ensures the crawler stays within the same domain as the input URL.
+- **Avoid Duplicate Crawls**: Prevents re-crawling of already visited pages.
 
 ### Extra Functionality
-No individual point below is explicitly required, but we recommend trying to achieve some extra goals as well, such as the following:
-- Make your crawler "friendly" - try not to get banned from the site by performing too many crawls.
-- Try to detect what images might be considered logos.
-- Show off your front-end dev skills with Javascript, HTML, and/or CSS to make the site look more engaging.
-- Any other way you feel you can show off your strengths as a developer 😊
+- **Friendly Crawling**: Implements mechanisms to reduce the risk of being flagged or banned by websites.
+- **Logo Detection**: Attempts to identify images that may represent logos.
+- **Interactive Front-end**: Provides a user-friendly interface built with HTML, CSS, and JavaScript for entering URLs and displaying results.
 
-**PLEASE do not send us a submission with only a basic JSoup crawl and only a couple lines of code.** This is your chance to prove what you could contribute to our team.
+## Technologies Used
+- **Java 8**: Core programming language.
+- **Maven**: For project management and build automation.
+- **Jsoup**: Library for HTML parsing and web scraping.
+- **Jetty Server**: Lightweight web server for hosting the application.
+- **HTML/CSS/JavaScript**: For building the front-end interface.
+- **Multi-threading**: For efficient and concurrent crawling.
 
-You have one week to work on the submission from the time when you receive it. To submit you assignment, zip up your project (`imagefinder.zip`) and email it back to me. **Please include a list of URLs that you used to test in your submissions.** You should place them in the attached `test-links.txt` file found in the root of this project.
+## Setup and Installation
+### Prerequisites
+- **Java 8**: Exact version is required (Java 9+ is not supported).
+- **Maven 3.5 or higher**: For building and running the project.
 
-## Structure
-The ImageFinder servlet is found in `src/main/java/com/eulerity/hackathon/imagefinder/ImageFinder.java`. This is the only provided Java class. Feel free to add more classes or packages as you see fit. 
-
-The main landing page for this project can be found in `src/main/webapp/index.html`. This page contains more instructions and serves as the starting page for the web application. You may edit this page as much as it suits you, and/or add other pages. 
-
-Finally, in the root directory of this project, you will find the `pom.xml`. This contains the project configuration details used by maven to build the project. If you want/need to use outside dependencies, you should add them to this file.
-
-## Running the Project
-Here we will detail how to setup and run this project so you may get started, as well as the requirements needed to do so.
-
-### Requirements
-Before beginning, make sure you have the following installed and ready to use
-- Maven 3.5 or higher
-- Java 8
-  - Exact version, **NOT** Java 9+ - the build will fail with a newer version of Java
-
-### Setup
-To start, open a terminal window and navigate to wherever you unzipped to the root directory `imagefinder`. To build the project, run the command:
-
->`mvn package`
-
-If all goes well you should see some lines that end with "BUILD SUCCESS". When you build your project, maven should build it in the `target` directory. To clear this, you may run the command:
-
->`mvn clean`
-
-To run the project, use the following command to start the server:
-
->`mvn clean test package jetty:run`
-
-You should see a line at the bottom that says "Started Jetty Server". Now, if you enter `localhost:8080` into your browser, you should see the `index.html` welcome page! If all has gone well to this point, you're ready to begin!
-
-## Submission
-When you are finished working on the project, before zipping up and emailing back your submission, **PLEASE RUN ONE LAST `mvn clean` COMMAND TO REMOVE ANY UNNECESSARY FILES FROM YOUR SUBMISSION**. Please also make sure to add the URLs you used to test your project to the `test-links.txt` file. After doing these things, you may zip up the root directory (`imagefinder`) and email it back to us.
-
-## Final Notes
-- If you feel you need more time to work, you are free to ask for it.
-- If you are having any trouble, especially with the setup, please reach out and we will try to answer as soon as we can.
-- The ideas listed above on how to expand the project are great starting points, but feel free to add in your own ideas as well.
-- Try to follow some good-practice principles when working on your code, such as meaningful and clean variable/method names and other good coding practices.
-- The code we have provided is to allow you to hit the ground running. You are free to use whatever web service you would like (as long as you use Java 8 and it is runnable from the command line).
-- We look forward to seeing what you can do, so good luck and have fun 😊
-=======
-# Image_Web_crawlerr
->>>>>>> 2783a0e4b8a3a9a4dbec11acf44d5ac94454068b
+### Build Instructions
+1. Clone this repository:
+   ```bash
+   git clone git@github.com:santosh-jorka/Image_Web_crawlerr.git
+   cd imagefinder
